@@ -9,15 +9,15 @@ rand = random.randint(1,10)
 guess = int(input("Введіть ваше число\n"))
 if guess == rand:
     print("Вітаю! Ви виграли!")
-else:
+elif type(guess) == int:
 #abs() - модуль(математичний)
-    if abs(guess - rand) <= 2: #перевірка наскільки близько відповідь юсера до випадково числа
+    if abs(guess - rand) <= 2: #перевірка наскільки близько відповідь користувача до випадково числа
         if guess > rand:
             print("ваша відповідь була завелика, але ви були близько!")
         elif guess < rand:
             print("ваша відповідь була замала, але ви були близько!")
 
-    elif abs(guess - rand) > 2 and abs(guess - rand) <=5:
+    elif 2 < abs(guess - rand) <= 5:
         if guess > rand:
             print("ваша відповідь була завелика")
         elif guess < rand:
@@ -28,3 +28,5 @@ else:
             print("ваша відповідь була завелика і ви навіть не близько : (")
         elif guess < rand:
             print("ваша відповідь була замала і ви навіть не близько : (")
+else:
+    print("помилка")
